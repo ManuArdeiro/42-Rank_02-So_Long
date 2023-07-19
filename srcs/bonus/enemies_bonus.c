@@ -6,7 +6,7 @@
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 19:22:53 by jolopez-          #+#    #+#             */
-/*   Updated: 2023/07/19 19:26:38 by jolopez-         ###   ########.fr       */
+/*   Updated: 2023/07/19 22:42:53 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,10 @@ int	ft_enemy_collision(int key, t_status *s)
 int	ft_enemy_animation(t_status *s)
 {
 	if (s->enemy->pos->x % 2 == 0)
-		s->img->img = mlx_xpm_file_to_image(s->mlx, "./img/enemy1.xpm",
+		s->img->img = mlx_xpm_file_to_image(s->mlx, "./img/enemy-l-1.xpm",
 				&s->img->size->x, &s->img->size->y);
 	else
-		s->img->img = mlx_xpm_file_to_image(s->mlx, "./img/enemy2.xpm",
+		s->img->img = mlx_xpm_file_to_image(s->mlx, "./img/enemy-l-2.xpm",
 				&s->img->size->x, &s->img->size->y);
 	return (0);
 }

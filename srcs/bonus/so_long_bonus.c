@@ -6,7 +6,7 @@
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 22:51:41 by marvin            #+#    #+#             */
-/*   Updated: 2023/07/19 19:16:33 by jolopez-         ###   ########.fr       */
+/*   Updated: 2023/07/19 22:45:53 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	ft_vars_init(t_status *status)
 	status->game->collects = 0;
 	status->enemy->pos->x = 0;
 	status->enemy->pos->y = 0;
-	status->img->spt_path = "./images/32-player-l.xpm";
+	status->img->spt_path = "./images/32-player-l-2.xpm";
 	return (0);
 }
 
