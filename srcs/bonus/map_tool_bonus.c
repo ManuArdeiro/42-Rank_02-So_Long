@@ -6,7 +6,7 @@
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 19:24:40 by jolopez-          #+#    #+#             */
-/*   Updated: 2023/07/19 19:47:55 by jolopez-         ###   ########.fr       */
+/*   Updated: 2023/07/20 16:48:53 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,8 @@ int	ft_load_map(t_status *s, int row, int col)
 	else if (s->map->map[row][col] == 'P')
 		s->img->img = mlx_xpm_file_to_image(s->mlx, s->img->spt_path,
 				&s->img->size->x, &s->img->size->y);
+	else if (s->map->map[row][col] == 'Y')
+		ft_enemy_animation(s);
 	mlx_put_image_to_window(s->mlx, s->win, s->img->img,
 		SPRITE_W * col, SPRITE_H * row);
 	mlx_destroy_image(s->mlx, s->img->img);
