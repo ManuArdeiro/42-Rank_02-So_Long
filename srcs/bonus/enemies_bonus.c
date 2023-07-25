@@ -6,7 +6,7 @@
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 19:22:53 by jolopez-          #+#    #+#             */
-/*   Updated: 2023/07/20 16:52:05 by jolopez-         ###   ########.fr       */
+/*   Updated: 2023/07/21 21:24:51 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,29 @@ int	ft_enemy_position(t_status *status)
 		while (col <= status->map->size->x)
 		{
 			if (status->map->map[row][col] == 'Y')
+			{
+				status->enemy->pos->x = col;
+				status->enemy->pos->y = row;
+			}
+			col++;
+		}
+		row++;
+	}
+	return (0);
+}
+
+int	ft_player_position(t_status *status)
+{
+	int		row;
+	int		col;
+
+	row = 0;
+	while (row < status->map->size->y)
+	{
+		col = 0;
+		while (col <= status->map->size->x)
+		{
+			if (status->map->map[row][col] == 'P')
 			{
 				status->enemy->pos->x = col;
 				status->enemy->pos->y = row;
@@ -62,11 +85,12 @@ int	ft_enemy_collision(int key, t_status *s)
 
 int	ft_enemy_animation(t_status *s)
 {
+	printf("1111\n");
 	if (s->enemy->pos->x % 2 == 0)
-		s->img->img = mlx_xpm_file_to_image(s->mlx, "./img/32-treexpm",
+		s->img->img = mlx_xpm_file_to_image(s->mlx, "./images/32-enemy-l-1.xpm",
 				&s->img->size->x, &s->img->size->y);
 	else
-		s->img->img = mlx_xpm_file_to_image(s->mlx, "./img/32-tree.xpm",
+		s->img->img = mlx_xpm_file_to_image(s->mlx, "./images/32-enemy-l-2.xpm",
 				&s->img->size->x, &s->img->size->y);
 	return (0);
 }

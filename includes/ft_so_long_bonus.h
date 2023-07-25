@@ -6,7 +6,7 @@
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 18:35:34 by jolopez-          #+#    #+#             */
-/*   Updated: 2023/07/19 19:47:19 by jolopez-         ###   ########.fr       */
+/*   Updated: 2023/07/21 21:14:01 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ typedef struct s_status
 
 //	File enemies_bonus.c
 int				ft_enemy_position(t_status *status);
+int				ft_player_position(t_status *status);
 int				ft_enemy_collision(int key, t_status *s);
 int				ft_enemy_animation(t_status *s);
 

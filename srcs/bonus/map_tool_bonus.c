@@ -6,7 +6,7 @@
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 19:24:40 by jolopez-          #+#    #+#             */
-/*   Updated: 2023/07/20 16:48:53 by jolopez-         ###   ########.fr       */
+/*   Updated: 2023/07/21 21:25:30 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ int	ft_print_map(t_status *status)
 
 int	ft_load_map(t_status *s, int row, int col)
 {
+	printf("1\n");
 	if (s->map->map[row][col] == '1')
 		s->img->img = mlx_xpm_file_to_image(s->mlx,
 				"./images/32 bush.xpm", &s->img->size->x, &s->img->size->y);
