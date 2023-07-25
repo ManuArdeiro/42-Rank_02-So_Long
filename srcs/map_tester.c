@@ -6,7 +6,7 @@
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 09:00:14 by jolopez-          #+#    #+#             */
-/*   Updated: 2023/07/15 16:32:25 by jolopez-         ###   ########.fr       */
+/*   Updated: 2023/07/25 17:23:24 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ static int	ft_chars_tester(t_status *status)
 				&& status->map->map[row][col] != 'E'
 				&& status->map->map[row][col] != 'C'
 				&& status->map->map[row][col] != 'Y')
-				ft_error(EXIT_FAILURE, "Invalid map: unknown char");
+				ft_error(EXIT_FAILURE, "Invalid map: unknown char", status);
 			col++;
 		}
 		row++;

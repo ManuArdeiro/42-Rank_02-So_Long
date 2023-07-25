@@ -6,7 +6,7 @@
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 19:24:24 by jolopez-          #+#    #+#             */
-/*   Updated: 2023/07/21 00:13:38 by jolopez-         ###   ########.fr       */
+/*   Updated: 2023/07/25 17:03:18 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,28 +58,23 @@ static int	enemy_move_up(t_status *s)
 
 int	ft_enemy_movement(t_status *s)
 {
-	usleep(500000);
-	ft_enemy_position(s);
-	if ((s->map->map[s->enemy->pos->y][s->enemy->pos->x + 1] == '0'
-		|| s->map->map[s->enemy->pos->y][s->enemy->pos->x + 1] == 'P')
-		/*&& s->game->enemies < s->map->size->x*/)
-		enemy_move_right(s);
-	else if ((s->map->map[s->enemy->pos->y + 1][s->enemy->pos->x] == '0'
-		|| s->map->map[s->enemy->pos->y + 1][s->enemy->pos->x] == 'P')
-		/*&& s->game->enemies < (s->map->size->x + s->map->size->y)*/)
-		enemy_move_down(s);
-	else if ((s->map->map[s->enemy->pos->y][s->enemy->pos->x - 1] == '0'
-		|| s->map->map[s->enemy->pos->y][s->enemy->pos->x - 1] == 'P')
-		/*&& s->game->enemies <
-		((2 * s->map->size->x) + s->map->size->y)*/)
-		enemy_move_left(s);
-	else if ((s->map->map[s->enemy->pos->y - 1][s->enemy->pos->x] == '0'
-		|| s->map->map[s->enemy->pos->y - 1][s->enemy->pos->x] == 'P')
-		/*&& s->game->enemies <
-		(2 * (s->map->size->x + s->map->size->y))*/)
-		enemy_move_up(s);
-	else
-		s->game->enemies = 0;
+	usleep(1000000);
+	if (s->animation % 10 == 0)
+	{
+		ft_enemy_position(s);
+		if ((s->map->map[s->enemy->pos->y][s->enemy->pos->x + 1] == '0'
+			|| s->map->map[s->enemy->pos->y][s->enemy->pos->x + 1] == 'P'))
+			enemy_move_right(s);
+		else if ((s->map->map[s->enemy->pos->y + 1][s->enemy->pos->x] == '0'
+			|| s->map->map[s->enemy->pos->y + 1][s->enemy->pos->x] == 'P'))
+			enemy_move_down(s);
+		else if ((s->map->map[s->enemy->pos->y][s->enemy->pos->x - 1] == '0'
+			|| s->map->map[s->enemy->pos->y][s->enemy->pos->x - 1] == 'P'))
+			enemy_move_left(s);
+		else if ((s->map->map[s->enemy->pos->y - 1][s->enemy->pos->x] == '0'
+			|| s->map->map[s->enemy->pos->y - 1][s->enemy->pos->x] == 'P'))
+			enemy_move_up(s);
+	}
 	ft_print_map(s);
 	ft_print_steps(s);
 	return (0);

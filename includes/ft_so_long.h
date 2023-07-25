@@ -6,7 +6,7 @@
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 18:35:34 by jolopez-          #+#    #+#             */
-/*   Updated: 2023/07/19 19:46:36 by jolopez-         ###   ########.fr       */
+/*   Updated: 2023/07/25 17:21:00 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,6 @@ typedef struct s_vector
 typedef struct s_img
 {
 	void		*img;
-	int			*addr;
-	int			bits_per_pixel;
-	int			line_length;
-	int			endian;
-	char		*spt_path;
 	t_vector	*size;
 	t_vector	*pos;
 }	t_img;
@@ -102,8 +97,8 @@ void			ft_mem_free(t_status **status);
 int				ft_movements(int key, t_status *s);
 
 //	File print.c
-int				ft_error(int code, char *text);
-int				ft_mem_error(int code);
+int				ft_error(int code, char *text, t_status *status);
+int				ft_mem_error(int code, t_status *status);
 int				ft_map_error(int code, char *text, t_status *status);
 int				ft_exit(t_status *status, char *text);
 int				ft_print_steps(t_status *s);

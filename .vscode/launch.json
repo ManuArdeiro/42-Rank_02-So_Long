@@ -9,7 +9,7 @@
 			"type": "cppdbg",
 			"request": "launch",
 			"program": "${workspaceFolder}/so_long",
-			"args": ["bonus_map_enemy.ber"],
+			"args": ["${workspaceFolder}/bonus_map_enemy.ber"],
 			"stopAtEntry": true,
 			"cwd": "${fileDirname}",
 			"environment": [],

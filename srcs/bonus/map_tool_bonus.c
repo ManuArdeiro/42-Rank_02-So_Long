@@ -6,7 +6,7 @@
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 19:24:40 by jolopez-          #+#    #+#             */
-/*   Updated: 2023/07/21 21:25:30 by jolopez-         ###   ########.fr       */
+/*   Updated: 2023/07/25 17:22:29 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,11 @@ int	ft_get_map_dim(t_status *status, char **argv)
 	char	*line;
 
 	line = "";
-	status->map->size = malloc(sizeof(t_vector) * 1);
-	if (!status->map->size)
-		return (1);
 	status->map->size->x = 0;
 	status->map->size->y = 0;
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
-		ft_error(EXIT_FAILURE, "Map not found!\n");
+		ft_error(EXIT_FAILURE, "Map not found!\n", status);
 	line = ft_gnl(fd);
 	ft_get_map_dim_aux(fd, line, status);
 	close(fd);
@@ -40,11 +37,11 @@ void	ft_get_map_dim_aux(int fd, char *line, t_status *status)
 	{
 		len = (int)ft_strlen(line);
 		if (status->map->size->x > 0 && len != status->map->size->x)
-			ft_error(EXIT_FAILURE, "Map is not a rectangle!");
+			ft_error(EXIT_FAILURE, "Map is not a rectangle!", status);
 		status->map->size->x = len;
 		status->map->size->y++;
 		if (status->map->size->x > 1000 || status->map->size->y > 1000)
-			ft_error(EXIT_FAILURE, "Map is too big!");
+			ft_error(EXIT_FAILURE, "Map is too big!", status);
 		line = ft_gnl(fd);
 	}
 }
@@ -60,7 +57,7 @@ int	ft_get_map(t_status *status, char **argv)
 		return (1);
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
-		ft_error(EXIT_FAILURE, "Map not found");
+		ft_error(EXIT_FAILURE, "Map not found", status);
 	status->map->map[row] = ft_gnl(fd);
 	while (status->map->map[row++])
 		status->map->map[row] = ft_gnl(fd);
@@ -89,7 +86,6 @@ int	ft_print_map(t_status *status)
 
 int	ft_load_map(t_status *s, int row, int col)
 {
-	printf("1\n");
 	if (s->map->map[row][col] == '1')
 		s->img->img = mlx_xpm_file_to_image(s->mlx,
 				"./images/32 bush.xpm", &s->img->size->x, &s->img->size->y);
@@ -103,8 +99,8 @@ int	ft_load_map(t_status *s, int row, int col)
 		s->img->img = mlx_xpm_file_to_image(s->mlx,
 				"./images/32-food.xpm", &s->img->size->x, &s->img->size->y);
 	else if (s->map->map[row][col] == 'P')
-		s->img->img = mlx_xpm_file_to_image(s->mlx, s->img->spt_path,
-				&s->img->size->x, &s->img->size->y);
+		s->img->img = mlx_xpm_file_to_image(s->mlx,
+				"./images/32 player.xpm", &s->img->size->x, &s->img->size->y);
 	else if (s->map->map[row][col] == 'Y')
 		ft_enemy_animation(s);
 	mlx_put_image_to_window(s->mlx, s->win, s->img->img,
