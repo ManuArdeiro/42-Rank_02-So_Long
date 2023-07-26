@@ -6,7 +6,7 @@
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 22:51:41 by marvin            #+#    #+#             */
-/*   Updated: 2023/07/25 17:23:03 by jolopez-         ###   ########.fr       */
+/*   Updated: 2023/07/26 18:22:30 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,14 @@
 static int	ft_vars_init(t_status *status)
 {
 	status->animation = 0;
+	status->previous = 'r';
 	status->game->steps = 0;
 	status->game->enemies = 0;
 	status->game->collects = 0;
 	status->enemy->pos->x = 0;
 	status->enemy->pos->y = 0;
+	status->img->size->x = 0;
+	status->img->size->y = 0;
 	return (0);
 }
 
@@ -81,8 +84,8 @@ int	main(int argc, char **argv)
 	if (!status)
 		return (1);
 	if (ft_mem_allocation(&status) != 0)
-		ft_mem_error(1);
-	ft_arguments_tester(argc, argv);
+		ft_mem_error(1, status);
+	ft_arguments_tester(argc, argv, status);
 	ft_get_map_dim(status, argv);
 	ft_vars_init(status);
 	ft_get_map(status, argv);

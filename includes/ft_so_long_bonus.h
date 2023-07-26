@@ -6,7 +6,7 @@
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 18:35:34 by jolopez-          #+#    #+#             */
-/*   Updated: 2023/07/25 17:20:49 by jolopez-         ###   ########.fr       */
+/*   Updated: 2023/07/26 20:58:55 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ typedef struct s_game
 typedef struct s_status
 {
 	int			animation;
+	char		previous;
 	void		*mlx;
 	void		*win;
 	t_game		*game;
@@ -78,12 +79,18 @@ int				ft_player_position(t_status *status);
 int				ft_enemy_collision(int key, t_status *s);
 int				ft_enemy_animation(t_status *s);
 
+//	File enemy_moves_bonus.c
+int				enemy_move_right(t_status *s);
+int				enemy_move_down(t_status *s);
+int				enemy_move_left(t_status *s);
+int				enemy_move_up(t_status *s);
+
 //	File enemy_movement_bonus.c
-//	static int	enemy_move_right(t_status *s);
-//	static int	enemy_move_down(t_status *s);
-//	static int	enemy_move_left(t_status *s);
-//	static int	enemy_move_up(t_status *s);
 int				ft_enemy_movement(t_status *s);
+void			ft_try_right(t_status *s);
+void			ft_try_left(t_status *s);
+void			ft_try_up(t_status *s);
+void			ft_try_down(t_status *s);
 
 //	File map_tools_bonus.c
 int				ft_get_map_dim(t_status *status, char **argv);

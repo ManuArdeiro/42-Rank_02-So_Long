@@ -6,7 +6,7 @@
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 19:24:40 by jolopez-          #+#    #+#             */
-/*   Updated: 2023/07/25 17:22:29 by jolopez-         ###   ########.fr       */
+/*   Updated: 2023/07/26 18:04:40 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,10 +88,10 @@ int	ft_load_map(t_status *s, int row, int col)
 {
 	if (s->map->map[row][col] == '1')
 		s->img->img = mlx_xpm_file_to_image(s->mlx,
-				"./images/32 bush.xpm", &s->img->size->x, &s->img->size->y);
+				"./images/32-bush.xpm", &s->img->size->x, &s->img->size->y);
 	else if (s->map->map[row][col] == '0')
 		s->img->img = mlx_xpm_file_to_image(s->mlx,
-				"./images/32 grass.xpm", &s->img->size->x, &s->img->size->y);
+				"./images/32-grass.xpm", &s->img->size->x, &s->img->size->y);
 	else if (s->map->map[row][col] == 'E')
 		s->img->img = mlx_xpm_file_to_image(s->mlx,
 				"./images/32-exit.xpm", &s->img->size->x, &s->img->size->y);
@@ -100,7 +100,7 @@ int	ft_load_map(t_status *s, int row, int col)
 				"./images/32-food.xpm", &s->img->size->x, &s->img->size->y);
 	else if (s->map->map[row][col] == 'P')
 		s->img->img = mlx_xpm_file_to_image(s->mlx,
-				"./images/32 player.xpm", &s->img->size->x, &s->img->size->y);
+				"./images/32-player.xpm", &s->img->size->x, &s->img->size->y);
 	else if (s->map->map[row][col] == 'Y')
 		ft_enemy_animation(s);
 	mlx_put_image_to_window(s->mlx, s->win, s->img->img,

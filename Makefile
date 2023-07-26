@@ -6,7 +6,7 @@
 #    By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/05 18:36:00 by jolopez-          #+#    #+#              #
-#    Updated: 2023/07/25 17:02:18 by jolopez-         ###   ########.fr        #
+#    Updated: 2023/07/26 18:16:23 by jolopez-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ MANDATORY		=	srcs/print.c \
 
 BONUS			=	srcs/bonus/enemies_bonus.c \
 				srcs/bonus/enemy_movement_bonus.c \
+				srcs/bonus/enemy_moves_bonus.c \
 				srcs/bonus/map_tool_bonus.c \
 				srcs/bonus/so_long_bonus.c \
 				srcs/bonus/tools_bonus.c

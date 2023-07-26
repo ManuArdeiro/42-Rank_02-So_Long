@@ -6,7 +6,7 @@
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 19:22:53 by jolopez-          #+#    #+#             */
-/*   Updated: 2023/07/25 17:00:53 by jolopez-         ###   ########.fr       */
+/*   Updated: 2023/07/26 18:11:49 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,11 +85,11 @@ int	ft_enemy_collision(int key, t_status *s)
 
 int	ft_enemy_animation(t_status *s)
 {
-	if (s->game->steps % 2 == 1)
-		s->img->img = mlx_xpm_file_to_image(s->mlx, "./images/32-enemy.xpm",
+	if (s->animation % 2 == 1)
+		s->img->img = mlx_xpm_file_to_image(s->mlx, "./images/32-enemy-1.xpm",
 				&s->img->size->x, &s->img->size->y);
 	else
-		s->img->img = mlx_xpm_file_to_image(s->mlx, "./images/32-tree.xpm",
+		s->img->img = mlx_xpm_file_to_image(s->mlx, "./images/32-enemy-2.xpm",
 				&s->img->size->x, &s->img->size->y);
 	s->animation++;
 	return (0);
