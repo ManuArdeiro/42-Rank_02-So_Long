@@ -6,7 +6,7 @@
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 22:51:41 by marvin            #+#    #+#             */
-/*   Updated: 2023/07/25 18:03:51 by jolopez-         ###   ########.fr       */
+/*   Updated: 2023/08/09 16:34:43 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int	main(int argc, char **argv)
 	status = malloc(sizeof(t_status) * 1);
 	if (!status)
 		return (1);
-	if (ft_mem_allocation(&status) != 0)
+	if (ft_mem_allocation(status) != 0)
 		ft_mem_error(1, status);
 	ft_arguments_tester(argc, argv, status);
 	ft_get_map_dim(status, argv);
@@ -99,6 +99,6 @@ int	main(int argc, char **argv)
 	mlx_hook(status->win, X_EVENT_KEY_EXIT, 1L << 0, ft_mlx_close, status);
 	mlx_expose_hook(status->win, ft_expose, status);
 	mlx_loop(status->mlx);
-	ft_mem_free(&status);
+	ft_mem_free(status);
 	free(status);
 }

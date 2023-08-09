@@ -6,7 +6,7 @@
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 19:22:53 by jolopez-          #+#    #+#             */
-/*   Updated: 2023/07/26 18:11:49 by jolopez-         ###   ########.fr       */
+/*   Updated: 2023/08/09 19:03:35 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,11 +85,20 @@ int	ft_enemy_collision(int key, t_status *s)
 
 int	ft_enemy_animation(t_status *s)
 {
-	if (s->animation % 2 == 1)
-		s->img->img = mlx_xpm_file_to_image(s->mlx, "./images/32-enemy-1.xpm",
+	if (s->animation % 5 == 1)
+		s->img->img = mlx_xpm_file_to_image(s->mlx, "images/nube_1.xpm",
+				&s->img->size->x, &s->img->size->y);
+	else if (s->animation % 5 == 2)
+		s->img->img = mlx_xpm_file_to_image(s->mlx, "images/nube_2.xpm",
+				&s->img->size->x, &s->img->size->y);
+	else if (s->animation % 5 == 3)
+		s->img->img = mlx_xpm_file_to_image(s->mlx, "images/nube_3.xpm",
+				&s->img->size->x, &s->img->size->y);
+	else if (s->animation % 5 == 4)
+		s->img->img = mlx_xpm_file_to_image(s->mlx, "images/nube_4.xpm",
 				&s->img->size->x, &s->img->size->y);
 	else
-		s->img->img = mlx_xpm_file_to_image(s->mlx, "./images/32-enemy-2.xpm",
+		s->img->img = mlx_xpm_file_to_image(s->mlx, "images/nube_5.xpm",
 				&s->img->size->x, &s->img->size->y);
 	s->animation++;
 	return (0);

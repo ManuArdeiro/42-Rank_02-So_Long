@@ -6,35 +6,36 @@
 #    By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/05 18:36:00 by jolopez-          #+#    #+#              #
-#    Updated: 2023/07/26 18:16:23 by jolopez-         ###   ########.fr        #
+#    Updated: 2023/08/09 18:33:53 by jolopez-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 			=	so_long
 
 SRCS 			= 	srcs/map_tools.c \
-				srcs/so_long.c \
-				srcs/tools.c
-
-MANDATORY		=	srcs/print.c \
-				srcs/movements.c \
 				srcs/map_tester.c \
 				srcs/mem.c \
+				srcs/movements.c \
+				srcs/print.c \
+				srcs/so_long.c \
+				srcs/tools.c \
 				includes/42_gnl/get_next_line.c \
 				includes/42_gnl/get_next_line_utils.c
 
 BONUS			=	srcs/bonus/enemies_bonus.c \
 				srcs/bonus/enemy_movement_bonus.c \
 				srcs/bonus/enemy_moves_bonus.c \
+				srcs/bonus/map_tester_bonus.c \
 				srcs/bonus/map_tool_bonus.c \
+				srcs/bonus/mem_bonus.c \
+				srcs/bonus/movements_bonus.c \
+				srcs/bonus/print_bonus.c \
 				srcs/bonus/so_long_bonus.c \
-				srcs/bonus/tools_bonus.c
-
-GNL				=	includes/42_gnl/get_next_line.c \
+				srcs/bonus/tools_bonus.c \
+				includes/42_gnl/get_next_line.c \
 				includes/42_gnl/get_next_line_utils.c
 
 OBJS			=	$(SRCS:%.c=%.o)
-MAND_OBJS		=	$(MANDATORY:%.c=%.o)
 BONUS_OBJS		=	$(BONUS:%.c=%.o)
 
 INC 			=	-I./includes/so_long.h -I./includes/42_GNL/get_next_line.h -I./includes/42_libft/libft.h
@@ -60,10 +61,8 @@ $(NAME):		$(MAND_OBJS) $(OBJS)
 				cd ./includes/42_libft && make
 				@echo "$(LIGHT_RED) Creating ft_printf files... $(WHITE)"
 				cd ./includes/42_ft_printf && make bonus
-#				@echo "$(LIGHT_RED) Creating mlx... $(WHITE)"
-#				cd mlx && make
 				@echo "$(YELLOW) Creating so_long... $(WHITE)"
-				${CC} $(CFLAGS) $(OBJS) $(MAND_OBJS) ${LIBS} ${MFLAGS} -o $(NAME)
+				${CC} $(CFLAGS) $(OBJS) ${LIBS} ${MFLAGS} -o $(NAME)
 				@echo "$(GREEN) Done..."			
 			
 bonus:			$(MAND_OBJS) $(BONUS_OBJS)
@@ -71,12 +70,8 @@ bonus:			$(MAND_OBJS) $(BONUS_OBJS)
 				cd ./includes/42_libft && make 
 				@echo "$(LIGHT_RED) Creating ft_printf files... $(WHITE)"
 				cd ./includes/42_ft_printf && make bonus
-				@echo "$(LIGHT_RED) Creating ft_gnl... $(WHITE)"
-				${CC} $(CFLAGS) $(BONUS_OBJS) $(MAND_OBJS) ${LIBS} ${MFLAGS} -o $(NAME)
-#				@echo "$(LIGHT_RED) Creating mlx... $(WHITE)"
-#				cd mlx && make
 				@echo "$(YELLOW) Creating so_long with enemies... $(WHITE)"
-				${CC} $(CFLAGS_BONUS) $(MAND_OBJS) ${BONUS_OBJS} ${LIBS} ${MFLAGS} -o $(NAME)
+				${CC} $(CFLAGS_BONUS) ${BONUS_OBJS} ${LIBS} ${MFLAGS} -o $(NAME)
 				@echo "$(GREEN) Done..."			
 
 clean:		
@@ -84,8 +79,6 @@ clean:
 				make clean -C includes/42_libft
 				@echo "$(LIGHT_RED) Cleaning ft_printf objects... $(WHITE)"
 				make clean -C includes/42_ft_printf
-#				@echo "$(LIGHT_RED) Cleaning mlx objects... $(WHITE)"
-#				make clean -C mlx
 				/bin/rm -rf $(OBJS) $(MAND_OBJS) $(BONUS_OBJS)
 
 fclean: 		clean
@@ -95,7 +88,9 @@ fclean: 		clean
 
 re: 			fclean all
 
-.PHONY: 		all clean fclean re bonus
+rebonus: 			fclean bonus
+
+.PHONY: 		all clean fclean re bonus rebonus
 
 # COLORS
 RED				= \033[0;31m

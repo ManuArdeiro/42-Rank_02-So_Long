@@ -6,7 +6,7 @@
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 18:35:34 by jolopez-          #+#    #+#             */
-/*   Updated: 2023/07/29 11:55:28 by jolopez-         ###   ########.fr       */
+/*   Updated: 2023/08/09 16:27:19 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,8 @@ int				ft_print_map(t_status *status);
 int				ft_load_map(t_status *s, int row, int col);
 
 //	File mem.c
-int				ft_mem_allocation(t_status **s);
-void			ft_mem_free(t_status **s);
+int				ft_mem_allocation(t_status *s);
+void			ft_mem_free(t_status *s);
 
 //	File movements.c
 //	static int	move_left(t_status *status);

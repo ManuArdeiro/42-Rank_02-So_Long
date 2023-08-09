@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.c                                            :+:      :+:    :+:   */
+/*   print_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 22:00:27 by jolopez-          #+#    #+#             */
-/*   Updated: 2023/08/09 16:09:10 by jolopez-         ###   ########.fr       */
+/*   Created: 2023/08/09 18:34:28 by jolopez-          #+#    #+#             */
+/*   Updated: 2023/08/09 18:38:23 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_so_long.h"
+#include "../../includes/ft_so_long_bonus.h"
 
 int	ft_error(int code, char *text, t_status *status)
 {

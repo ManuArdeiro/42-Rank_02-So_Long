@@ -6,7 +6,7 @@
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 18:35:34 by jolopez-          #+#    #+#             */
-/*   Updated: 2023/07/29 11:52:50 by jolopez-         ###   ########.fr       */
+/*   Updated: 2023/08/09 18:04:57 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,10 @@ int				ft_load_map(t_status *s, int row, int col);
 //	int			ft_map_tester(t_status *status);
 int				ft_map_tester(t_status *status);
 
+//	File mem_bonus.c
+int				ft_mem_allocation(t_status *status);
+void			ft_mem_free(t_status *status);
+
 //	File so_long_bonus.c
 //	static int	ft_vars_init(t_status *status);
 //	static int	ft_arguments_tester(int argc, char **argv);
@@ -126,10 +130,6 @@ int				ft_check_collects(t_status *status);
 //	static int	ft_chars_tester(t_status *status);
 //	int			ft_map_tester(t_status *status);
 int				ft_map_tester(t_status *status);
-
-//	File mem.c
-int				ft_mem_allocation(t_status **status);
-void			ft_mem_free(t_status **status);
 
 //	File movements.c
 //	static int	move_left(t_status *status);

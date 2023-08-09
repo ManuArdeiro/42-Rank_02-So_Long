@@ -6,7 +6,7 @@
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 22:51:41 by marvin            #+#    #+#             */
-/*   Updated: 2023/07/29 11:53:08 by jolopez-         ###   ########.fr       */
+/*   Updated: 2023/08/09 16:36:05 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,8 @@ int	main(int argc, char **argv)
 	status = malloc(sizeof(t_status) * 1);
 	if (!status)
 		return (1);
-	if (ft_mem_allocation(&status) != 0)
-		ft_mem_error(1, status);
+	if (ft_mem_allocation(status) != 0)
+		ft_mem_error(EXIT_FAILURE, status);
 	ft_arguments_tester(argc, argv, status);
 	ft_get_map_dim(status, argv);
 	ft_vars_init(status);
@@ -103,5 +103,5 @@ int	main(int argc, char **argv)
 	if (status->game->enemies > 0)
 		mlx_loop_hook(status->mlx, ft_enemy_movement, status);
 	mlx_loop(status->mlx);
-	ft_mem_free(&status);
+	ft_mem_free(status);
 }
