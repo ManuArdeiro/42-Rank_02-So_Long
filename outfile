@@ -1,7 +1,5 @@
-includes/ft_so_long.h: Error!
-Error: LINE_TOO_LONG        (line:  88, col:  82):	line too long
-includes/ft_so_long_bonus.h: Error!
-Error: LINE_TOO_LONG        (line:  93, col:  82):	line too long
+includes/ft_so_long.h: OK!
+includes/ft_so_long_bonus.h: OK!
 includes/42_ft_printf/includes/ft_printf.h: OK!
 includes/42_ft_printf/srcs/ft_printf.c: OK!
 includes/42_ft_printf/srcs/ft_printf_bonus.c: OK!
@@ -9800,7 +9798,11 @@ srcs/so_long.c: OK!
 srcs/tools.c: OK!
 srcs/bonus/enemies_bonus.c: OK!
 srcs/bonus/enemy_movement_bonus.c: OK!
+srcs/bonus/enemy_moves_bonus.c: OK!
+srcs/bonus/map_tester_bonus.c: OK!
 srcs/bonus/map_tool_bonus.c: OK!
-srcs/bonus/so_long_bonus.c: Error!
-Error: TOO_MANY_LINES       (line: 104, col:   1):	Function has more than 25 lines
+srcs/bonus/mem_bonus.c: OK!
+srcs/bonus/movements_bonus.c: OK!
+srcs/bonus/print_bonus.c: OK!
+srcs/bonus/so_long_bonus.c: OK!
 srcs/bonus/tools_bonus.c: OK!

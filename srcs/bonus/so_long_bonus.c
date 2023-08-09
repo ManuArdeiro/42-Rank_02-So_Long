@@ -6,7 +6,7 @@
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 22:51:41 by marvin            #+#    #+#             */
-/*   Updated: 2023/08/09 16:36:05 by jolopez-         ###   ########.fr       */
+/*   Updated: 2023/08/09 19:36:17 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	ft_vars_init(t_status *status)
 	return (0);
 }
 
-static int	ft_arguments_tester(int argc, char **argv, t_status *status)
+static void	ft_arguments_tester(int argc, char **argv, t_status *status)
 {
 	if (argc < 2)
 		ft_error(EXIT_FAILURE, "No map (.ber) as argument.", status);
@@ -43,7 +43,7 @@ static int	ft_arguments_tester(int argc, char **argv, t_status *status)
 		ft_error(EXIT_FAILURE, "Invalid map extension! (.ber)", status);
 	else if (argv[1][ft_strlen(argv[1]) - 4] != '.')
 		ft_error(EXIT_FAILURE, "Invalid map extension! (.ber)", status);
-	return (0);
+	ft_get_map_dim(status, argv);
 }
 
 static int	ft_player_init_position(t_status *status)
@@ -86,7 +86,6 @@ int	main(int argc, char **argv)
 	if (ft_mem_allocation(status) != 0)
 		ft_mem_error(EXIT_FAILURE, status);
 	ft_arguments_tester(argc, argv, status);
-	ft_get_map_dim(status, argv);
 	ft_vars_init(status);
 	ft_get_map(status, argv);
 	ft_map_tester(status);

@@ -6,7 +6,7 @@
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 19:24:24 by jolopez-          #+#    #+#             */
-/*   Updated: 2023/07/26 21:06:52 by jolopez-         ###   ########.fr       */
+/*   Updated: 2023/08/09 19:34:25 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,28 +36,28 @@ void	ft_try_right(t_status *s)
 	ft_enemy_position(s);
 	if ((s->map->map[s->enemy->pos->y][s->enemy->pos->x + 1] == '0'
 		|| s->map->map[s->enemy->pos->y][s->enemy->pos->x + 1] == 'P'))
-		{
-			enemy_move_right(s);
-			s->previous = 'r';
-		}
+	{
+		enemy_move_right(s);
+		s->previous = 'r';
+	}
 	else if ((s->map->map[s->enemy->pos->y + 1][s->enemy->pos->x] == '0'
 		|| s->map->map[s->enemy->pos->y + 1][s->enemy->pos->x] == 'P'))
-		{
-			enemy_move_down(s);
-			s->previous = 'd';
-		}
+	{
+		enemy_move_down(s);
+		s->previous = 'd';
+	}
 	else if ((s->map->map[s->enemy->pos->y - 1][s->enemy->pos->x] == '0'
 		|| s->map->map[s->enemy->pos->y - 1][s->enemy->pos->x] == 'P'))
-		{
-			enemy_move_up(s);
-			s->previous = 'u';
-		}
+	{
+		enemy_move_up(s);
+		s->previous = 'u';
+	}
 	else if ((s->map->map[s->enemy->pos->y][s->enemy->pos->x - 1] == '0'
 		|| s->map->map[s->enemy->pos->y][s->enemy->pos->x - 1] == 'P'))
-		{
-			enemy_move_left(s);
-			s->previous = 'l';
-		}
+	{
+		enemy_move_left(s);
+		s->previous = 'l';
+	}
 }
 
 void	ft_try_left(t_status *s)
@@ -65,28 +65,28 @@ void	ft_try_left(t_status *s)
 	ft_enemy_position(s);
 	if ((s->map->map[s->enemy->pos->y][s->enemy->pos->x - 1] == '0'
 		|| s->map->map[s->enemy->pos->y][s->enemy->pos->x - 1] == 'P'))
-		{
-			enemy_move_left(s);
-			s->previous = 'l';
-		}
+	{
+		enemy_move_left(s);
+		s->previous = 'l';
+	}
 	else if ((s->map->map[s->enemy->pos->y - 1][s->enemy->pos->x] == '0'
 		|| s->map->map[s->enemy->pos->y - 1][s->enemy->pos->x] == 'P'))
-		{
-			enemy_move_up(s);
-			s->previous = 'u';
-		}
+	{
+		enemy_move_up(s);
+		s->previous = 'u';
+	}
 	else if ((s->map->map[s->enemy->pos->y + 1][s->enemy->pos->x] == '0'
 		|| s->map->map[s->enemy->pos->y + 1][s->enemy->pos->x] == 'P'))
-		{
-			enemy_move_down(s);
-			s->previous = 'd';
-		}
+	{
+		enemy_move_down(s);
+		s->previous = 'd';
+	}
 	else if ((s->map->map[s->enemy->pos->y][s->enemy->pos->x + 1] == '0'
 		|| s->map->map[s->enemy->pos->y][s->enemy->pos->x + 1] == 'P'))
-		{
-			enemy_move_right(s);
-			s->previous = 'r';
-		}
+	{
+		enemy_move_right(s);
+		s->previous = 'r';
+	}
 }
 
 void	ft_try_up(t_status *s)
@@ -94,28 +94,28 @@ void	ft_try_up(t_status *s)
 	ft_enemy_position(s);
 	if ((s->map->map[s->enemy->pos->y - 1][s->enemy->pos->x] == '0'
 		|| s->map->map[s->enemy->pos->y - 1][s->enemy->pos->x] == 'P'))
-		{
-			enemy_move_up(s);
-			s->previous = 'u';
-		}
+	{
+		enemy_move_up(s);
+		s->previous = 'u';
+	}
 	else if ((s->map->map[s->enemy->pos->y][s->enemy->pos->x - 1] == '0'
 		|| s->map->map[s->enemy->pos->y][s->enemy->pos->x - 1] == 'P'))
-		{
-			enemy_move_left(s);
-			s->previous = 'l';
-		}
+	{
+		enemy_move_left(s);
+		s->previous = 'l';
+	}
 	else if ((s->map->map[s->enemy->pos->y][s->enemy->pos->x + 1] == '0'
 		|| s->map->map[s->enemy->pos->y][s->enemy->pos->x + 1] == 'P'))
-		{
-			enemy_move_right(s);
-			s->previous = 'r';
-		}
+	{
+		enemy_move_right(s);
+		s->previous = 'r';
+	}
 	else if ((s->map->map[s->enemy->pos->y + 1][s->enemy->pos->x] == '0'
 		|| s->map->map[s->enemy->pos->y + 1][s->enemy->pos->x] == 'P'))
-		{
-			enemy_move_down(s);
-			s->previous = 'd';
-		}
+	{
+		enemy_move_down(s);
+		s->previous = 'd';
+	}
 }
 
 void	ft_try_down(t_status *s)
@@ -123,26 +123,26 @@ void	ft_try_down(t_status *s)
 	ft_enemy_position(s);
 	if ((s->map->map[s->enemy->pos->y + 1][s->enemy->pos->x] == '0'
 		|| s->map->map[s->enemy->pos->y + 1][s->enemy->pos->x] == 'P'))
-		{
-			enemy_move_down(s);
-			s->previous = 'd';
-		}
+	{
+		enemy_move_down(s);
+		s->previous = 'd';
+	}
 	else if ((s->map->map[s->enemy->pos->y][s->enemy->pos->x - 1] == '0'
 		|| s->map->map[s->enemy->pos->y][s->enemy->pos->x - 1] == 'P'))
-		{
-			enemy_move_left(s);
-			s->previous = 'l';
-		}
+	{
+		enemy_move_left(s);
+		s->previous = 'l';
+	}
 	else if ((s->map->map[s->enemy->pos->y][s->enemy->pos->x + 1] == '0'
 		|| s->map->map[s->enemy->pos->y][s->enemy->pos->x + 1] == 'P'))
-		{
-			enemy_move_right(s);
-			s->previous = 'r';
-		}
+	{
+		enemy_move_right(s);
+		s->previous = 'r';
+	}
 	else if ((s->map->map[s->enemy->pos->y - 1][s->enemy->pos->x] == '0'
 		|| s->map->map[s->enemy->pos->y - 1][s->enemy->pos->x] == 'P'))
-		{
-			enemy_move_up(s);
-			s->previous = 'u';
-		}
+	{
+		enemy_move_up(s);
+		s->previous = 'u';
+	}
 }
