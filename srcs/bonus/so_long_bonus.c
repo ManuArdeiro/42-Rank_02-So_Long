@@ -6,7 +6,7 @@
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 22:51:41 by marvin            #+#    #+#             */
-/*   Updated: 2023/08/09 19:36:17 by jolopez-         ###   ########.fr       */
+/*   Updated: 2023/08/09 21:55:29 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,7 @@ static void	ft_arguments_tester(int argc, char **argv, t_status *status)
 	if (argc < 2)
 		ft_error(EXIT_FAILURE, "No map (.ber) as argument.", status);
 	if (argc > 2)
-	{
 		ft_error(EXIT_FAILURE, "Use just one .ber map as argument!!", status);
-		return (-1);
-	}
 	if (argv[1][ft_strlen(argv[1]) - 1] != 'r')
 		ft_error(EXIT_FAILURE, "Invalid map extension! (.ber)", status);
 	else if (argv[1][ft_strlen(argv[1]) - 2] != 'e')

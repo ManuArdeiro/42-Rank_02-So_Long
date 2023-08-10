@@ -6,7 +6,7 @@
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 19:24:40 by jolopez-          #+#    #+#             */
-/*   Updated: 2023/07/26 18:04:40 by jolopez-         ###   ########.fr       */
+/*   Updated: 2023/08/10 16:47:40 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_get_map_dim(t_status *status, char **argv)
 	status->map->size->y = 0;
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
-		ft_error(EXIT_FAILURE, "Map not found!\n", status);
+		ft_error(EXIT_FAILURE, "Map not found!", status);
 	line = ft_gnl(fd);
 	ft_get_map_dim_aux(fd, line, status);
 	close(fd);

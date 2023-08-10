@@ -6,7 +6,7 @@
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 13:03:58 by jolopez-          #+#    #+#             */
-/*   Updated: 2023/07/08 20:44:46 by jolopez-         ###   ########.fr       */
+/*   Updated: 2023/08/09 20:05:08 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	ft_key_press(int key, t_status *status)
 		ft_movements(key, status);
 	}
 	if (init_steps != status->game->steps)
-		printf("Steps: %d\n", status->game->steps);
+		ft_printf("Steps: %d\n", status->game->steps);
 	ft_print_map(status);
 	ft_print_steps(status);
 	return (0);
@@ -57,7 +57,7 @@ int	ft_exit_found(t_status *status)
 	if (ft_count_items(status, 'C') == 0)
 		ft_exit(status, "CONGRATS!!!! \nYou WON !!!!");
 	else
-		printf("\e[35m\e[1mPlease, collect all diamonds!!!\e[0m\n");
+		ft_printf("\e[35m\e[1mPlease, collect all diamonds!!!\e[0m\n");
 	return (0);
 }
 
@@ -77,6 +77,6 @@ int	ft_check_collects(t_status *status)
 		ft_exit(status, "CONGRATS!!!! \nYou WON !!!");
 	}
 	else
-		printf("Please, take all collects before leaving!!\n");
+		ft_printf("Please, take all collects before leaving!!\n");
 	return (0);
 }

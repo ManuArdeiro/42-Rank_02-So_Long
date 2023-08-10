@@ -6,7 +6,7 @@
 /*   By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 18:35:34 by jolopez-          #+#    #+#             */
-/*   Updated: 2023/08/09 19:36:46 by jolopez-         ###   ########.fr       */
+/*   Updated: 2023/08/09 21:50:54 by jolopez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@
 # include "../mlx/mlx.h"
 # include "./42_libft/libft.h"
 # include "./42_GNL/get_next_line.h"
+# include "./42_ft_printf/includes/ft_printf.h"
 
 typedef struct s_vector
 {

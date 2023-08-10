@@ -6,7 +6,7 @@
 #    By: jolopez- <jolopez-@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/05 18:36:00 by jolopez-          #+#    #+#              #
-#    Updated: 2023/08/09 18:33:53 by jolopez-         ###   ########.fr        #
+#    Updated: 2023/08/09 21:53:08 by jolopez-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,10 +38,10 @@ BONUS			=	srcs/bonus/enemies_bonus.c \
 OBJS			=	$(SRCS:%.c=%.o)
 BONUS_OBJS		=	$(BONUS:%.c=%.o)
 
-INC 			=	-I./includes/so_long.h -I./includes/42_GNL/get_next_line.h -I./includes/42_libft/libft.h
-INC_BONUS		=	-I./includes/so_long_bonus.h -I./includes/42_GNL/get_next_line.h -I./includes/42_libft/libft.h
+INC 			=	-I./includes/so_long.h 
+INC_BONUS		=	-I./includes/so_long_bonus.h 
 
-LIBS			=	./includes/42_libft/libft.a ./includes/42_ft_printf/libftprintf.a ./mlx/libmlx.a
+LIBS		=	./includes/42_libft/libft.a ./includes/42_ft_printf/libftprintf.a
 
 MLX_DIR 		=	./mlx
 
@@ -56,16 +56,16 @@ MFLAGS			=	-Lmlx -lmlx -framework OpenGL -framework AppKit
 
 all: $(NAME)
 
-$(NAME):		$(MAND_OBJS) $(OBJS)
+$(NAME): 		$(OBJS)
 				@echo "$(LIGHT_RED) Creating libft files... $(WHITE)"
-				cd ./includes/42_libft && make
+				cd ./includes/42_libft && make 
 				@echo "$(LIGHT_RED) Creating ft_printf files... $(WHITE)"
 				cd ./includes/42_ft_printf && make bonus
 				@echo "$(YELLOW) Creating so_long... $(WHITE)"
-				${CC} $(CFLAGS) $(OBJS) ${LIBS} ${MFLAGS} -o $(NAME)
+				$(CC) $(CFLAGS) $(OBJS) $(LIBS) $(MFLAGS) -o $(NAME)
 				@echo "$(GREEN) Done..."			
 			
-bonus:			$(MAND_OBJS) $(BONUS_OBJS)
+bonus:			$(BONUS_OBJS)
 				@echo "$(LIGHT_RED) Creating libft files... $(WHITE)"
 				cd ./includes/42_libft && make 
 				@echo "$(LIGHT_RED) Creating ft_printf files... $(WHITE)"
